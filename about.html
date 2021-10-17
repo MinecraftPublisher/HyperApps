@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel='stylesheet' href='./style.css'>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js');
+        };
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <nav>
+        <a href='/'>Home</a>
+        <a href='apps.html'>Apps</a>
+        <a href='about.html' class='selected'>About</a>
+    </nav>
+    <main>
+        <h1>About HyperApps</h1>
+        <p>
+            HyperApps is an all-in-one application that allows you to use multiple tools and features in only one program. HyperApps was first started by HoustonTheThird at October 5th, 2021.
+        </p>
+        <p>
+            We are trying to improve HyperApps as much as possible, And encourage developers to take part in HyperApps. We plan to either make HyperApps paid or include ads to both maintain the budget to run HyperApps and reward developers that took part in HyperApps with cash.
+        </p>
+        <p>
+            If you have any suggestions, Feedback or you just want to contact us to take part in HyperApps, Please contact us through Github.
+        </p>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

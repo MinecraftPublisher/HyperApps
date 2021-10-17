@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  text-align: center;
+  font-family: arial, sans-serif;
+}
+nav {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav a {
+  display:inline-block;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+nav a.selected {
+  font-weight: bold;
+}
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.banner {
+  background-color: #333;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 25px;
+  min-height: 50vh;
+  max-height: 50vh;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.banner > .title {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.banner > .description {
+  font-size: 1.2rem;
+  color: rgb(160, 160, 160);
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.banner > .text {
+  color: grey;
+  text-align: left;
+}
+
+.reload {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  min-width: 25vw;
+  min-height: 12vh;
+  width: 25vw;
+  height: 12vh;
+}
+
+.add {
+  position: fixed;
+  left: 3vh;
+  bottom: 3vh;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 5vh;
+  height: 5vh;
+  border: 5px solid greenyellow;
+  background-color: greenyellow;
+  color: purple;
+
+}

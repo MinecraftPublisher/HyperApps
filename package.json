@@ -1,0 +1,16 @@
+{
+  "name": "hyperapps",
+  "version": "1.0.0",
+  "description": "The all-in-one progressive webapp.",
+  "scripts": {
+    "start": "npx webpack serve"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "HoustonTheThird",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack-dev-server": "^4.3.1"
+  }
+}

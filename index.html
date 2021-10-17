@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel='stylesheet' href='./style.css'>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js');
+        };
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="HyperApps">
+    <link rel="apple-touch-icon" href="icon-152x152.png">
+    <meta name="msapplication-TileImage" content="icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="selected">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="about.html">About</a>
+    </nav>
+    <main>
+        <h2>HyperApps - Main</h2>
+        <div class="container" onclick="">
+            <div class="banner">
+                <div class="title">Random Funny App</div>
+                <div class="description">Random Funny App shows you a random number multiplied by either 69 or 420</div>
+                <div class="text">The most code used is literally so smolly af lelellelllll</div>
+            </div>
+        </div>
+
+        <div onclick="alert('Adding is still not a thing bruv')" class="add">
+            +
+        </div>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
