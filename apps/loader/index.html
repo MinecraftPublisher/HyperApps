@@ -34,13 +34,7 @@
                         if(data.split('\n')[7] == "type=html") {
                             document.querySelector('app').innerHTML = `<iframe src="data:text/html;charset=utf-8;base64,${btoa(data.split('\n').slice(8).join('\n').replace('<head>', '<head>' + '<link rel="stylesheet" href="' + data.split('\n')[6].substring(4) + '">'))}" class="app"></iframe>`
                         } else if (data.split('\n')[7] == "type=url") {
-                            fetch(data.spli('\n')[8]).then((url_response) => {
-                                url_response.text().then((url_text) => {
-                                    document.querySelector('app').innerHTML = `<iframe src="data:text/html;charset=utf-8;base64,${btoa(url_text.split('\n').slice(8).join('\n').replace('<head>', '<head>' + '<link rel="stylesheet" href="' + url_text.split('\n')[6].substring(4) + '">'))}" class="app"></iframe>`
-                                })
-                            }).catch(() => {
-                                document.querySelector('app').innerHTML = "Failed to retrieve data"
-                            })
+                            document.querySelector('app').innerHTML = `<iframe src="${data.split('\n')[8]}" class="app"></iframe>`
                         }
                     })
                 })
