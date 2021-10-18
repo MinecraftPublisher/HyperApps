@@ -6,3 +6,4 @@ auth=false
 api=false
 css=
 type=url
+https://google.com/
