@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
-    <link rel="manifest" href="./manifest.json">
-    <link rel='stylesheet' href='/style.css'>
+    <link rel="manifest" href="../manifest.json">
+    <link rel='stylesheet' href='../style.css'>
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <script>
         if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./service-worker.js');
+            navigator.serviceWorker.register('../service-worker.js');
         };
     </script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="HyperApps">
-    <link rel="apple-touch-icon" href="icon-152x152.png">
+    <link rel="apple-touch-icon" href="../icon-152x152.png">
     <meta name="msapplication-TileImage" content="icon-144x144.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,17 +42,6 @@
         <textarea class="data" placeholder="Enter HTML below if you chose HTML, Or enter a URL if you chose URL..."></textarea>
         <br><br><br><br><br><br>
         <button class="submit" onclick="submit_app()">Submit your amazing app!</button>
-
-        <!--
-            name=Base App template
-            description=A basic app template for HyperApps.
-            text=Click here to learn more about this basic template and a how-to guide on how to create a HyperApps app.
-            version=TEMPLATE
-            auth=true
-            api=true
-            css=https://cdn.jsdelivr.net/npm/water.css@2/out/water.css
-            type=html
-        -->
     </main>
     <style>
         body {
@@ -110,7 +99,7 @@
         }
     </style>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="../main.js"></script>
     <script>
         function get(id) {
             return document.querySelector('.' + id)
