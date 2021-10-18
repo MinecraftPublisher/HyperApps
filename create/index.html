@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel='stylesheet' href='/style.css'>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js');
+        };
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="HyperApps">
+    <link rel="apple-touch-icon" href="icon-152x152.png">
+    <meta name="msapplication-TileImage" content="icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/apps">Apps</a>
+        <a href="/about.html">About</a>
+        <a href="/create" class="selected">Create</a>
+    </nav>
+    <main>
+        <h1>Create a new app</h1>
+        <input class="title" placeholder="The app title.">
+        <input class="description" placeholder="The description of your app.">
+        <textarea class="text" placeholder="A brief summary of your app..."></textarea>
+        <input class="version" placeholder="Choose an initial version for your app.">
+        <input class="css" placeholder="A url to use custom css on your app.">
+        <input class="type" placeholder='Only "HTML" and "URL" allowed.'>
+        <warning>You can only use "True" or "False" for these options</warning>
+        <input class="auth" placeholder='Wether or not your app will use auth.'>
+        <input class="api" placeholder="Wether or not your app will use the API.">
+        <warning>The last parameter!</warning>
+        <textarea class="data" placeholder="Enter HTML below if you chose HTML, Or enter a URL if you chose URL..."></textarea>
+        <br><br><br><br><br><br>
+        <button class="submit" onclick="submit_app()">Submit your amazing app!</button>
+
+        <!--
+            name=Base App template
+            description=A basic app template for HyperApps.
+            text=Click here to learn more about this basic template and a how-to guide on how to create a HyperApps app.
+            version=TEMPLATE
+            auth=true
+            api=true
+            css=https://cdn.jsdelivr.net/npm/water.css@2/out/water.css
+            type=html
+        -->
+    </main>
+    <style>
+        body {
+            background-color: rgb(121, 201, 0);
+        }
+
+        main {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .submit {
+            display: block;
+            width: 80vw;
+            margin-left: 5vw;
+            margin-right: 5vw;
+            border: 4px solid tomato;
+            outline: none;
+            border-radius: 10px;
+            color: darkred;
+            background-color: rgb(255, 134, 112);
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        warning {
+            color: whitesmoke;
+        }
+
+        input, textarea {
+            display: block;
+            margin: 10px;
+            padding-left: 10px;
+            width: 78vw;
+            height: 30px;
+            border: 4px solid tomato;
+            outline: none;
+            border-radius: 10px;
+            color: darkred;
+            background-color: rgb(255, 134, 112);
+            resize: vertical;
+        }
+
+        textarea {
+            min-height: 20vh;
+            max-height: 30vh;
+            padding-top: 5px;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgb(176, 47, 47);
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script>
+        function get(id) {
+            return document.querySelector('.' + id)
+        }
+
+        function submit_app() {
+            let url = "mailto:hyperapps@phazor.ir?subject=HyperApps%20app%20submission&body=" + encodeURI(`name=${get('title').value}
+description=${get('description').value}
+text=${get('text').innerHTML}
+version=${get('version').value}
+auth=${get('auth').value}
+api=${get('api').value}
+css=${get('css').value}
+type=${get('type').value}
+${get('data').innerHTML}`)
+
+            window.open(url)
+        }
+    </script>
+</body>
+</html>

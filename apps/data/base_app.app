@@ -26,7 +26,7 @@ type=html
             <b><code>AUTH</code></b>: Asks for authentication permissions that you can then use to show a user profile and user-specific features.<br>
             <b><code>API</code></b>:  Asks for API permissions to store data, Connect to matches, Push notifications, Matchmaking and many, many more options.<br>
             <b><code>CSS</code></b>: This field is for adding custom css, Use <code>default</code> to use the default css, Use <code>none</code> for no css, Or use a URL for custom css.<br>
-            <b><code>TYPE</code></b>: Could either be <code>HTML</code> or <code>URL</code>. The URL type does not have permissions to use the HyperApps API, Neither could they use custom CSS.
+            <b><code>TYPE</code></b>: Could either be <code>HTML</code> or <code>URL</code>. The URL type does not have permissions to use the HyperApps API, Neither could they use custom CSS. <b>WARNING: CORS needs to be turned off completely for your URL app to work.</b>
         </p>
     </body>
 </html>

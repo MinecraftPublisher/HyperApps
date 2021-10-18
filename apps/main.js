@@ -8,17 +8,23 @@ fetch('/apps/data/list.txt').then((response) => {
             fetch('/apps/data/' + line + '.app').then((response2) => {
                 response2.text().then((raw) => {
                     let app = raw.split('\n')
-                    if(validateApp(app)) {
-                    let contents = `
-<div class="container" onclick="window.location.href = '/apps/loader/?name=${line}';">
-    <div class="banner">
-        <div class="title">${app[0].substring(5)}</div>
-        <div class="description">${app[1].substring(12)}</div>
-        <div class="text">${app[2].substring(5)}</div>
-    </div>
-</div>
-`;
-                    document.querySelector('apps').innerHTML += contents + "<br>";
+                    if (app[7] == "type=url") {
+                        fetch(app[8]).then((url_response) => {
+                            url_response.text().then((url_data) => {
+                                app = url_data.split('\n')
+                                if (validateApp(app)) {
+                                    let contents = `<div class="container" onclick="window.location.href = '/apps/loader/?name=${line}';"><div class="banner"><div class="title">${app[0].substring(5)}</div>
+        <div class="description">${app[1].substring(12)}</div><div class="text">${app[2].substring(5)}</div></div></div>`;
+                                    document.querySelector('apps').innerHTML += contents + "<br>";
+                                }
+                            })
+                        }).catch(() => { })
+                    } else if (app[7] == "type=html") {
+                        if (validateApp(app)) {
+                            let contents = `<div class="container" onclick="window.location.href = '/apps/loader/?name=${line}';"><div class="banner"><div class="title">${app[0].substring(5)}</div>
+<div class="description">${app[1].substring(12)}</div><div class="text">${app[2].substring(5)}</div></div></div>`;
+                            document.querySelector('apps').innerHTML += contents + "<br>";
+                        }
                     }
                 })
             }).catch((err) => {
