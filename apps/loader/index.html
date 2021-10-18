@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Apps</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel='stylesheet' href='/style.css'>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        };
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <nav>
+        <a href='/'>Home</a>
+        <a href='/apps' class='selected'>Apps</a>
+        <a href='/about.html'>About</a>
+    </nav>
+    <main2>
+        <app>
+            Loading app...
+        </app>
+
+        <script>
+            window.onload = function() {
+                let query = Object.fromEntries(new URLSearchParams(window.location.search))["name"] || "base_app";
+                fetch('/apps/data/' + query + '.app')
+                .then((response) => {
+                    response.text().then((data) => {
+                        document.querySelector('app').innerHTML = `<iframe src="data:text/html;charset=utf-8;base64,${btoa(data.split('\n').slice(8).join('\n').replace('<head>', '<head>' + '<link rel="stylesheet" href="' + data.split('\n')[6].substring(4) + '">'))}" class="app"></iframe>`
+                    })
+                })
+                .catch((err) => {
+    document.querySelector('apps').innerHTML = "<span style='color: red;'>ERROR: Unable to fetch the app index database, Double check your internet connection. If this problem continues, Please contact the support team.</span>";
+})
+            }
+        </script>
+        <style>
+            .app {
+                width: 100%;
+                height: 92vh;
+                margin-bottom: -18px;
+                border: none;
+            }
+        </style>
+    </main2>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="text/javascript" src="/main.js"></script>
+</body>
+</html>

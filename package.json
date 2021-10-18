@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The all-in-one progressive webapp.",
   "scripts": {
-    "start": "npx webpack serve"
+    "start": "serve"
   },
   "repository": {
     "type": "git"
@@ -11,6 +11,7 @@
   "author": "HoustonTheThird",
   "license": "MIT",
   "devDependencies": {
+    "webpack": "^5.58.2",
     "webpack-dev-server": "^4.3.1"
   }
 }
