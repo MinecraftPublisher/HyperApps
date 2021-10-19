@@ -1,0 +1,15 @@
+name=Recursion
+description=Recursion
+text=Recursion
+version=Recursion
+auth=false
+api=false
+css=
+type=html
+<html>
+    <head>
+    </head>
+    <body>
+        <script>location.replace("https://minecraftpublisher.github.io/HyperApps");</script>
+    </body>
+</html>
